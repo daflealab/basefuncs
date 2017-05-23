@@ -9,7 +9,7 @@
 #' @param sheet_number An integer. The sheet to import from
 #' the excel workbook. Indexed by number. Default is the first sheet.
 #'
-#' @return A tibble with Date, Run, SDR, Cell Details and Animal IDs.
+#' @return A tibble with Date, Run, SDR, Cell Details, and Animal IDs.
 #' Will convert b or B or Blank or blank to BLANK
 #' @export
 #'

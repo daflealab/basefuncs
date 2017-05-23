@@ -13,7 +13,7 @@ import_sdr_id(file_name, sheet_number = 1)
 the excel workbook. Indexed by number. Default is the first sheet.}
 }
 \value{
-A tibble with Date, Run, SDR, Cell Details and Animal IDs.
+A tibble with Date, Run, SDR, Cell Details, and Animal IDs.
 Will convert b or B or Blank or blank to BLANK
 }
 \description{
