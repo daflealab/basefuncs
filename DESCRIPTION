@@ -4,6 +4,7 @@ Version: 0.1
 Authors@R: person("Matt", "Hall", email = "matthew.hall@monash.edu", role = c("aut", "cre"))
 Description: A selection of packages for common tasks in the hall lab.
     Includes packages for importing and processing tricoder and metabolic data.
+URL: http://github.com/mattdhall/daflealab
 Depends: R (>= 3.3.2)
 License: CC0
 Encoding: UTF-8
