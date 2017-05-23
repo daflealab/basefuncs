@@ -27,16 +27,16 @@ devtools::install_github("daflealab/basefuncs")
 
 ## Overview
 
-Import functions:
-- import_sdr_data()
-- import_sdr_id()
-- import_tricoder()
+**Import functions:**  
+  + import_sdr_data()  
+  + import_sdr_id()  
+  + import_tricoder()  
 
-Wrangling SDR data:
-- merge_sdr_id()
-- calc_metab
+**Wrangling SDR outputs:**  
+  + merge_sdr_id()  
+  + calc_metab  
 
-Plotting SDR results
-- plot_sdr_cells
-- plot_sdr_blank
+**Plotting SDR results:**   
+  + plot_sdr_cells  
+  + plot_sdr_blank  
 

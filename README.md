@@ -3,7 +3,7 @@
 basefuncs
 =========
 
-The goal of basefuncs is to ...
+The goal of basefuncs is to streamlien the importing and formating of Tricoder data and SDR metabolic data
 
 Installation
 ------------
@@ -15,11 +15,18 @@ You can install basefuncs from github with:
 devtools::install_github("daflealab/basefuncs")
 ```
 
-Example
--------
+Overview
+--------
 
-This is a basic example which shows you how to solve a common problem:
+**Import functions:**
++ import\_sdr\_data()
++ import\_sdr\_id()
++ import\_tricoder()
 
-``` r
-## basic example code
-```
+**Wrangling SDR outputs:**
++ merge\_sdr\_id()
++ calc\_metab
+
+**Plotting SDR results:**
++ plot\_sdr\_cells
++ plot\_sdr\_blank
