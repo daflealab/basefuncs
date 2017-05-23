@@ -1,4 +1,4 @@
-Package: daflealab
+Package: basefuncs
 Title: Useful Packages for the Hall Lab
 Version: 0.1
 Authors@R: person("Matt", "Hall", email = "matthew.hall@monash.edu", role = c("aut", "cre"))
@@ -15,6 +15,8 @@ Depends:
 Imports:
     assertthat,
     stringr,
-    LoLinR,
     gridExtra,
     readxl
+Suggests:
+    LoLinR
+
