@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 
 # basefuncs
 
-The goal of basefuncs is to ...
+The goal of basefuncs is to streamlien the importing and formating of Tricoder data and SDR metabolic data
 
 ## Installation
 
@@ -25,10 +25,18 @@ You can install basefuncs from github with:
 devtools::install_github("daflealab/basefuncs")
 ```
 
-## Example
+## Overview
 
-This is a basic example which shows you how to solve a common problem:
+Import functions:
+- import_sdr_data()
+- import_sdr_id()
+- import_tricoder()
 
-```{r example}
-## basic example code
-```
+Wrangling SDR data:
+- merge_sdr_id()
+- calc_metab
+
+Plotting SDR results
+- plot_sdr_cells
+- plot_sdr_blank
+
