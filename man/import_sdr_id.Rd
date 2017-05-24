@@ -7,20 +7,23 @@
 import_sdr_id(file_name, sheet_number = 1)
 }
 \arguments{
-\item{file_name}{A string. The excel file to import.}
+\item{file_name}{A string. The excel file to import. Must contain the
+DATE in cell B2, BLOCK in B3 and RUN in B4. First 5 rows will be
+ removed after import.}
 
 \item{sheet_number}{An integer. The sheet to import from
 the excel workbook. Indexed by number. Default is the first sheet.}
 }
 \value{
 A tibble with Date, Run, SDR, Cell Details, and Animal IDs.
-Will convert b or B or Blank or blank to BLANK
+Will convert b or B or Blank or blank to BLANK. Returns an error
+if duplicate SDR IDs are detected or unnames cells incuded.
 }
 \description{
 \code{import_sdr_id} imports an excel file linking the
-location on an SDR to a ID:
-The last letter of the Run_ID must be a letter
-The last three digits of the SDR_ID must be the SDR number
+location on an SDR to a ID. SDR ID must be a number.
+Unused SDRs must be removed from the excel file (No
+blank SDRs). Blank or Empty cells must be named Explicitly.
 }
 \examples{
 first_run <- import_sdr_ids("./Metab positions 1_17-18NOV.xlsx")
