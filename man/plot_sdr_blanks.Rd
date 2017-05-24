@@ -4,11 +4,15 @@
 \alias{plot_sdr_blanks}
 \title{Plot LoLinR slopes for every SDR in a run}
 \usage{
-plot_sdr_blanks(metab_df, dotcex = 1, bin = NULL)
+plot_sdr_blanks(metab_df, dotcex = 1, bin = 0.1)
 }
 \arguments{
 \item{metab_df}{A Tibble of metab data in nested format.
 LoLinR must have  already been applied using \code{calc_metab}.}
+
+\item{dotcex}{An integer. The diameter of the dots relative to binwidth, default 1.}
+
+\item{bin}{An integer. The maximum binwidth. Default at 0.1.}
 }
 \value{
 A plot for each of SDR showing the slope estimates
