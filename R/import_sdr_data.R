@@ -24,7 +24,7 @@
 #'                            sheet_number = 1, skip_rows = 12,
 #'                            Trim_time = 0)
 
-import_sdr_data <- function(dataset_dir, sheet_number = 1, skip_rows = 12, Trim_time = 0, ...){
+import_sdr_data <- function(dataset_dir, sheet_number = 1, skip_rows = 12, Trim_time = 5, ...){
 
   stopifnot(length(dataset_dir) > 0)
 
@@ -37,15 +37,15 @@ import_sdr_data <- function(dataset_dir, sheet_number = 1, skip_rows = 12, Trim_
     sdr_id <-  readxl::read_excel(dataset, range = "B5", col_names = FALSE, sheet = sheet_number)[[1]]
     run_id <-  readxl::read_excel(dataset, range = "B1", col_names = FALSE, sheet = sheet_number)[[1]]
 
-    dataset_named <- readxl::read_excel(dataset, skip = skip_rows, sheet = sheet_number) %>%
+    dataset_named <- readxl::read_excel(dataset, skip = skip_rows, sheet = sheet_number, na = c("No Sensor", "NA")) %>%
       mutate(Run_id = run_id, SDR = stringr::str_sub(sdr_id, -3)) %>%
       select(SDR, Run_id, Date = `Date/Time`, Time_min = `Time/Min.`, A1:D6) %>%
       mutate(Date = lubridate::dmy_hms(Date)) %>%
       mutate(Date = lubridate::as_date(Date)) %>%
       mutate(Day = lubridate::wday(Date, label = TRUE, abbr = FALSE)) %>%
+      filter(Time_min > Trim_time) %>%
       gather(key = Cell, value = V02, A1:D6) %>%
-      unite(col = location_ID, SDR, Cell, remove = FALSE) %>%
-      filter(Time_min > Trim_time)
+      unite(col = location_ID, SDR, Cell, remove = FALSE)
 
   }
 

@@ -5,7 +5,7 @@
 \title{Import SDR data files}
 \usage{
 import_sdr_data(dataset_dir, sheet_number = 1, skip_rows = 12,
-  Trim_time = 0, ...)
+  Trim_time = 5, ...)
 }
 \arguments{
 \item{dataset_dir}{A string indicating the location
