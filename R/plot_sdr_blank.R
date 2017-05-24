@@ -16,7 +16,7 @@
 #' @examples
 #' plot_metab_blanks(test_data_merged)
 
-plot_sdr_blanks <- function(metab_df, dotsz = 0.7, binwd = 0.01){
+plot_sdr_blanks <- function(metab_df, dotsz = 0.9, binwd = 0.005){
 
   p <- metab_df %>% mutate(Blank = ifelse(Indiv_ID == "BLANK", "Y", "N")) %>%
     ggplot(aes(x = 1, y = slope, fill = Blank)) + facet_grid(. ~ SDR) +
