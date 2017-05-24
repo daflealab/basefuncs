@@ -13,7 +13,7 @@
 #' @param skip_rows An integer. The number of rows of the
 #' excel sheet to skip on import. Defaults to 12.
 #' @param Trim_time An integer. Initial sampling times
-#' to skip. Defaults to none.
+#' to skip. Defaults to 5. No Sensor errors are set to missing (NA).
 #' @param ...
 #'
 #' @return A nested tibble by SDR, with Date, Time, Cell, and Oxygen values
