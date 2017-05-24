@@ -4,7 +4,7 @@
 \alias{plot_sdr_blanks}
 \title{Plot LoLinR slopes for every SDR in a run}
 \usage{
-plot_sdr_blanks(metab_df)
+plot_sdr_blanks(metab_df, dotcex = 0.6)
 }
 \arguments{
 \item{metab_df}{A Tibble of metab data in nested format.
