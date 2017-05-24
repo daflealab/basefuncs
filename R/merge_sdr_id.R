@@ -16,10 +16,21 @@
 
 merge_sdr_id <- function(sdr_df, id_df){
 
-  id_df <- id_df %>% select(location_ID, Indiv_ID, Row_ID, Column_ID)
+  unique_date_id <- unique(sdr_df$Date)
+  unique_date_data <- unique(id_df$Date)
 
-  sdr_df <- sdr_df %>% left_join(id_df, by = "location_ID") %>%
-    select(Indiv_ID, SDR, location_ID, Cell, Row_ID, Column_ID, everything())
+  if (unique_date_id == unique_date_data)
+  {
 
-  return(sdr_df)
+    id_df <- id_df %>% select(location_ID, Indiv_ID, Row_ID, Column_ID)
+
+    sdr_df <- sdr_df %>% left_join(id_df, by = "location_ID") %>%
+      select(Indiv_ID, SDR, location_ID, Cell, Row_ID, Column_ID, everything())
+
+    return(sdr_df)
+
+  } else
+  {
+    stop("Date mismatch between SDR IDs and SDR Data detected")
+  }
 }
