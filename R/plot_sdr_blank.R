@@ -23,7 +23,10 @@ plot_sdr_blanks <- function(metab_df, dotcex = 1, bin = 0.1){
     geom_dotplot(binaxis = "y", stackdir = "center", dotsize = dotcex, binwidth = 0.1) +
     theme_bw() + ggtitle("Variation in slopes for BLANK cells for each SDR") +
     theme(plot.title = element_text(hjust = 0.5)) +
-    theme(axis.ticks = element_blank(), axis.text.x = element_blank(), axis.title = element_blank())
+    theme(axis.ticks = element_blank(),
+          axis.text.x = element_blank(),
+          axis.title = element_blank(),
+          legend.position="bottom")
 
   return(p)
 }
