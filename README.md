@@ -1,18 +1,18 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-basefuncs
-=========
+genlabfunc
+==========
 
 The goal of basefuncs is to streamlien the importing and formating of Tricoder data and SDR metabolic data
 
 Installation
 ------------
 
-You can install basefuncs from github with:
+You can install genlabfunc from github with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("daflealab/basefuncs")
+devtools::install_github("daflealab/genlabfunc")
 ```
 
 Overview
