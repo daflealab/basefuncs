@@ -21,11 +21,11 @@
 
 import_sdr_id <- function(file_name, sheet_number = 1){
 
-  test_L <- readxl::read_excel(path = file_name, sheet = sheet_number, range = cell_cols("A:G"),
+  test_L <- readxl::read_excel(path = file_name, sheet = sheet_number, range = readxl::cell_cols("A:G"),
                                col_names = c("Row_ID", "R1", "R2", "R3", "R4", "R5", "R6"),
                                col_types = "text") %>% slice(-(1:5))
 
-  test_R <- readxl::read_excel(path = file_name, sheet = sheet_number, range = cell_cols("I:O"),
+  test_R <- readxl::read_excel(path = file_name, sheet = sheet_number, range = readxl::cell_cols("I:O"),
                                col_names = c("Row_ID", "R1", "R2", "R3", "R4", "R5", "R6"),
                                col_types = "text")
 
@@ -62,7 +62,7 @@ import_sdr_id <- function(file_name, sheet_number = 1){
       mutate(SDR = rep(SDR_id, each = 4)) %>%
       select(Date, Run, SDR, Row_ID, everything()) %>%
       gather(Column_ID, Indiv_ID, R1:R6) %>%
-      mutate(Column_ID = str_sub(Column_ID, -1)) %>%
+      mutate(Column_ID = stringr::str_sub(Column_ID, -1)) %>%
       unite(col = Cell, Row_ID, Column_ID, remove = FALSE, sep = "") %>%
       unite(location_ID, SDR, Cell, sep = "_", remove = FALSE) %>%
       mutate(Indiv_ID = ifelse(Indiv_ID %in% c("B", "b", "Blank", "blank"), "BLANK", Indiv_ID)) %>%
