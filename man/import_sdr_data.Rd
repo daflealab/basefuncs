@@ -19,7 +19,7 @@ the first}
 excel sheet to skip on import. Defaults to 12.}
 
 \item{Trim_time}{An integer. Initial sampling times
-to skip. Defaults to none.}
+to skip. Defaults to 5. No Sensor errors are set to missing (NA).}
 
 \item{...}{}
 }
