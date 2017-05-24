@@ -6,8 +6,8 @@
 #'
 #' @param metab_df A Tibble of metab data in nested format.
 #' LoLinR must have  already been applied using \code{calc_metab}.
-#' @param dotcex An integer. The diameter of the dots relative to binwidth, default 1.
-#' @param bin An integer. The maximum binwidth. Default at 0.1.
+#' @param dotcex An integer. The diameter of the dots relative to binwidth, default 0.9.
+#' @param bin An integer. The maximum binwidth. Default at 0.005.
 #'
 #' @return A plot for each of SDR showing the slope estimates
 #' for each SDR in a run. Blanks cells are highlighted.
