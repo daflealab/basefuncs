@@ -10,6 +10,9 @@ plot_sdr_blanks(metab_df, ...)
 \item{metab_df}{A Tibble of metab data in nested format.
 LoLinR must have  already been applied using \code{calc_metab}.}
 
+\item{...}{All options for geom_dotplot can be passed,
+including binwidth, and dotsize.}
+
 \item{dotcex}{An integer. The diameter of the dots relative to binwidth, default 0.9.}
 
 \item{bin}{An integer. The maximum binwidth. Default at 0.005.}
