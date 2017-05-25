@@ -12,8 +12,7 @@ import_sdr_data(dataset_dir, sheet_number = 1, skip_rows = 12,
 of the directory of xlsx files to import.}
 
 \item{sheet_number}{An integer. The sheet number of the
-excel workbook that should be imported. Defaults to
-the first}
+excel workbook that should be imported. Defaults to 1.}
 
 \item{skip_rows}{An integer. The number of rows of the
 excel sheet to skip on import. Defaults to 12.}

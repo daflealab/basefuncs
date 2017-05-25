@@ -8,8 +8,7 @@
 #' @param dataset_dir A string indicating the location
 #' of the directory of xlsx files to import.
 #' @param sheet_number An integer. The sheet number of the
-#'  excel workbook that should be imported. Defaults to
-#'  the first
+#'  excel workbook that should be imported. Defaults to 1.
 #' @param skip_rows An integer. The number of rows of the
 #' excel sheet to skip on import. Defaults to 12.
 #' @param Trim_time An integer. Initial sampling times
@@ -28,7 +27,7 @@ import_sdr_data <- function(dataset_dir, sheet_number = 1, skip_rows = 12, Trim_
 
   stopifnot(length(dataset_dir) > 0)
 
-  list_of_files <- dir(dataset_dir, full.names = TRUE)
+  list_of_files <- dir(dataset_dir, pattern = "xlsx", full.names = TRUE)
 
   read_and_assign <- function(dataset){
     # Function to import data set, assign SDR and Run IDs
