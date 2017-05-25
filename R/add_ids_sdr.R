@@ -1,6 +1,6 @@
 #' Merges SDR ID and SDR data
 #'
-#' \code{merge_sdr_id} takes the nested dataframe of raw
+#' \code{add_ids_sdr} takes the nested dataframe of raw
 #' SDR data and adds to this the IDs associated with each
 #' cell
 #'
@@ -14,7 +14,7 @@
 #' @examples
 #' test_data_merged <- merge_sdr_id(sdr_df = test_data, id_df = first_run)
 
-merge_sdr_id <- function(sdr_df, id_df){
+add_ids_sdr <- function(sdr_df, id_df){
 
   unique_date_id <- unique(sdr_df$Date)
   unique_date_data <- unique(id_df$Date)
