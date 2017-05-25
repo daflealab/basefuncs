@@ -16,11 +16,11 @@
 #' @examples
 #' plot_metab_blanks(test_data_merged)
 
-plot_sdr_blanks <- function(metab_df, dotsz = 0.9, binwd = 0.005){
+plot_sdr_blanks <- function(metab_df, ...){
 
   p <- metab_df %>% mutate(Blank = ifelse(Indiv_ID == "BLANK", "Y", "N")) %>%
     ggplot(aes(x = 1, y = slope, fill = Blank)) + facet_grid(. ~ SDR) +
-    geom_dotplot(binaxis = "y", stackdir = "center", dotsize = dotsz, binwidth = binwd) +
+    geom_dotplot(binaxis = "y", stackdir = "center", ...) +
     theme_bw() + ggtitle("Variation in slopes for BLANK cells for each SDR") +
     theme(plot.title = element_text(hjust = 0.5)) +
     theme(axis.ticks = element_blank(),
