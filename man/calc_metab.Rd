@@ -7,7 +7,8 @@
 calc_metab(nested_df, metab_method = "pc", alpha_value = 0.2)
 }
 \arguments{
-\item{nested_df}{The nested df imported using import_metab().}
+\item{nested_df}{The nested df imported using import_metab().
+Time must still be in minutes (e.g. Time_min)}
 
 \item{metab_method}{A string. Either "pc" or "eq".
 "pc"" is the suggested method by Colin for oxygen consumption data.
@@ -16,12 +17,13 @@ It is the default.}
 \item{alpha_value}{Default at 0.2.}
 }
 \value{
-A nested tibble with the model, summary and slopes as list columns
+A nested tibble with the model, summary and slopes (per hour change) as list columns.
 }
 \description{
 \code{calc_metab} takes the LoLinR method of
 estimating the best fitting change in oxygen consumption
 but applies this to a nested dataframe of many SDR plate runs.
+Time is converted from min to hours automatically.
 }
 \examples{
 test_data_merged <- calc_metab(test_data_merged)
