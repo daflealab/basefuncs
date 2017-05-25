@@ -2,7 +2,7 @@
 % Please edit documentation in R/add_ids_sdr.R
 \name{add_ids_sdr}
 \alias{add_ids_sdr}
-\title{Merges SDR ID and SDR data}
+\title{Adds SDR ID to SDR data}
 \usage{
 add_ids_sdr(sdr_df, id_df)
 }
@@ -21,5 +21,5 @@ SDR data and adds to this the IDs associated with each
 cell
 }
 \examples{
-test_data_merged <- merge_sdr_id(sdr_df = test_data, id_df = first_run)
+test_data_merged <- add_ids_sdr(sdr_df = sdr_data_1, id_df = sdr_id_1)
 }
