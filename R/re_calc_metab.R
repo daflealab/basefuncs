@@ -62,7 +62,7 @@ re_calc_metab <- function(nested_df, SDR, cell, min_time, max_time,
   } else {
 
     id_df$slope <- NA
-    nested_df <- nested_df %>% filter(!(Indiv_ID %in% ID)) %>%
+    nested_df <- nested_df %>% filter(!(SDR == SDR & Cell == cell)) %>%
       bind_rows(id_df) %>% arrange(SDR, Column_ID, Row_ID)
   }
 }
