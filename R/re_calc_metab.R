@@ -22,7 +22,7 @@
 #' @examples
 #' test_data_merged <- calc_metab(test_data_merged)
 
-re_calc_metab <- function(nested_df, ID, min_time, max_time,
+re_calc_metab <- function(nested_df, SDR, cell, min_time, max_time,
                           metab_method = "pc", alpha_value = 0.8,
                           set_slope_zero = FALSE) {
 
@@ -43,9 +43,9 @@ re_calc_metab <- function(nested_df, ID, min_time, max_time,
   }
 
   #Code to iterate over all SDRs
-  id_df <- nested_df %>% filter(Indiv_ID %in% ID)
+  id_df <- nested_df %>% filter(SDR == SDR, Cell == cell)
 
-  assertthat::assert_that(nrow(id_df) == length(unique(ID)),
+  assertthat::assert_that(nrow(id_df) == 1,
                           msg = "More than one unique individual returned per ID. Check IDs")
 
   if (set_slope_zero == FALSE){
@@ -57,7 +57,7 @@ re_calc_metab <- function(nested_df, ID, min_time, max_time,
       mutate(summary = map(model, summary)) %>%
       mutate(slope = map_dbl(summary, get_beta))
 
-    nested_df <- nested_df %>% filter(!(Indiv_ID %in% ID)) %>%
+    nested_df <- nested_df %>% filter(SDR != SDR, Cell != cell) %>%
       bind_rows(id_df) %>% arrange(SDR, Column_ID, Row_ID)
 
     return(nested_df)
