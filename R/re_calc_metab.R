@@ -1,6 +1,6 @@
 #' Runs LoLinR over whole SDR arrays and runs
 #'
-#' \code{calc_metab} takes the LoLinR method of
+#' \code{re_calc_metab} takes the LoLinR method of
 #' estimating the best fitting change in oxygen consumption
 #' but applies this to a nested dataframe of many SDR plate runs.
 #' Time is converted from min to hours automatically.
