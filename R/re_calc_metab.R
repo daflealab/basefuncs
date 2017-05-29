@@ -54,7 +54,7 @@ re_calc_metab <- function(nested_df, SDR, cell, min_time, max_time,
       mutate(summary = map(model, summary)) %>%
       mutate(slope = map_dbl(summary, get_beta))
 
-    nested_df <- nested_df %>% filter(SDR != SDR, Cell != cell) %>%
+    nested_df <- nested_df %>% filter(!(SDR == SDR & Cell == cell)) %>%
       bind_rows(id_df) %>% arrange(SDR, Column_ID, Row_ID)
 
     return(nested_df)
