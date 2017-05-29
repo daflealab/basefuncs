@@ -45,8 +45,7 @@ re_calc_metab <- function(nested_df, SDR, cell, min_time, max_time,
   #Code to iterate over all SDRs
   id_df <- nested_df %>% filter(SDR == SDR, Cell == cell)
 
-  assertthat::assert_that(nrow(id_df) == 1,
-                          msg = "More than one unique individual returned per ID. Check IDs")
+  stopifnot(nrow(id_df) == 1)
 
   if (set_slope_zero == FALSE){
 
