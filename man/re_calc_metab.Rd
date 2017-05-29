@@ -4,26 +4,28 @@
 \alias{re_calc_metab}
 \title{Runs LoLinR over whole SDR arrays and runs}
 \usage{
-re_calc_metab(nested_df, SDR, cell, min_time, max_time, metab_method = "pc",
-  alpha_value = 0.8, set_slope_zero = FALSE)
+re_calc_metab(nested_df, sdr_id, cell_id, min_time, max_time,
+  set_slope_zero = FALSE, metab_method = "pc", alpha_value = 0.8)
 }
 \arguments{
 \item{nested_df}{The nested df imported using import_metab().
 Time must still be in minutes (e.g. Time_min)}
 
+\item{sdr_id}{A string. Identify of SDR plate.}
+
+\item{cell_id}{A string. Identify of Cell to change.}
+
 \item{min_time}{An integer. Use to trim data and recalc slopes}
 
 \item{max_time}{An integer. Use to trim data and recalc slopes}
+
+\item{set_slope_zero}{Use to set slope for ID to missing}
 
 \item{metab_method}{A string. Either "pc" or "eq".
 "pc"" is the suggested method by Colin for oxygen consumption data.
 It is the default.}
 
-\item{alpha_value}{Default at 0.2.}
-
-\item{set_slope_zero}{Use to set slope for ID to missing}
-
-\item{ID}{A string. The ID of the indvidual to edit}
+\item{alpha_value}{Now defaults at 0.8.}
 }
 \value{
 A nested tibble with the model, summary and slopes (per hour change) as list columns.
