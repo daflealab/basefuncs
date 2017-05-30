@@ -11,7 +11,7 @@
 #' @param cell_id A string. Identify of Cell to change.
 #' @param min_time An integer. Use to trim data and recalc slopes
 #' @param max_time An integer. Use to trim data and recalc slopes
-#' @param set_slope_zero Use to set slope for ID to missing
+#' @param set_slope_na Use to set slope for ID to missing
 #' @param metab_method A string. Either "pc" or "eq".
 #' "pc"" is the suggested method by Colin for oxygen consumption data.
 #' It is the default.
@@ -23,7 +23,7 @@
 #' @examples
 #' test_data_merged <- calc_metab(test_data_merged)
 
-re_calc_metab <- function(nested_df, sdr_id, cell_id, min_time, max_time, set_slope_zero = FALSE,
+re_calc_metab <- function(nested_df, sdr_id, cell_id, min_time, max_time, set_slope_na = FALSE,
                           metab_method = "pc", alpha_value = 0.8) {
 
   filter_data <- function(data) {
@@ -45,7 +45,7 @@ re_calc_metab <- function(nested_df, sdr_id, cell_id, min_time, max_time, set_sl
   #Code to iterate over all SDRs
   id_df <- nested_df %>% filter(SDR == sdr_id, Cell == cell_id)
 
-  if (set_slope_zero == FALSE){
+  if (set_slope_na == FALSE){
 
     id_df <- id_df %>%
       select(-model, -summary, -slope) %>%

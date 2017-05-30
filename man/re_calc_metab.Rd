@@ -5,7 +5,7 @@
 \title{Runs LoLinR over whole SDR arrays and runs}
 \usage{
 re_calc_metab(nested_df, sdr_id, cell_id, min_time, max_time,
-  set_slope_zero = FALSE, metab_method = "pc", alpha_value = 0.8)
+  set_slope_na = FALSE, metab_method = "pc", alpha_value = 0.8)
 }
 \arguments{
 \item{nested_df}{The nested df imported using import_metab().
@@ -19,7 +19,7 @@ Time must still be in minutes (e.g. Time_min)}
 
 \item{max_time}{An integer. Use to trim data and recalc slopes}
 
-\item{set_slope_zero}{Use to set slope for ID to missing}
+\item{set_slope_na}{Use to set slope for ID to missing}
 
 \item{metab_method}{A string. Either "pc" or "eq".
 "pc"" is the suggested method by Colin for oxygen consumption data.
