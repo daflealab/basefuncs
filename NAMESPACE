@@ -2,7 +2,7 @@
 
 export(add_ids_sdr)
 export(calc_metab)
-export(format_coef)
+export(coef_format)
 export(import_sdr_data)
 export(import_sdr_id)
 export(import_tricoder)
