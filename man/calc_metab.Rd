@@ -4,7 +4,7 @@
 \alias{calc_metab}
 \title{Runs LoLinR over whole SDR arrays and runs}
 \usage{
-calc_metab(nested_df, metab_method = "pc", alpha_value = 0.2)
+calc_metab(nested_df, metab_method = "pc", alpha_value = 0.25)
 }
 \arguments{
 \item{nested_df}{The nested df imported using import_metab().

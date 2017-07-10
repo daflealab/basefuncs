@@ -18,7 +18,7 @@
 #' @examples
 #' test_data_merged <- calc_metab(test_data_merged)
 
-calc_metab <- function(nested_df, metab_method = "pc", alpha_value = 0.2) {
+calc_metab <- function(nested_df, metab_method = "pc", alpha_value = 0.25) {
 
   metab_model <- function(df) {
     #Function to run the oxygen comsumption models
@@ -29,6 +29,9 @@ calc_metab <- function(nested_df, metab_method = "pc", alpha_value = 0.2) {
     #Function to extract the slope of the best fitting mode
     return(summary_table$summaryTable$b1[1])
   }
+
+  assertthat::assert_that(!("slope" %in% names(nested_df)),
+                          msg = paste("Slope variable already exits, please reimport nested_df before running calc_metab() again"))
 
   #Code to iterate over all SDRs
   nested_df <- nested_df %>%
