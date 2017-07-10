@@ -5,7 +5,7 @@
 \title{Import SDR data files}
 \usage{
 import_sdr_data(dataset_dir, sheet_number = 1, skip_rows = 12,
-  Trim_time = 5, ...)
+  Trim_time = 20, ...)
 }
 \arguments{
 \item{dataset_dir}{A string indicating the location
@@ -18,7 +18,7 @@ excel workbook that should be imported. Defaults to 1.}
 excel sheet to skip on import. Defaults to 12.}
 
 \item{Trim_time}{An integer. Initial sampling times
-to skip. Defaults to 5. No Sensor errors are set to missing (NA).}
+to skip. Defaults to 20. No Sensor errors are set to missing (NA).}
 
 \item{...}{}
 }

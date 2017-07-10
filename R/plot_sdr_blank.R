@@ -23,7 +23,7 @@ plot_sdr_blanks <- function(metab_df, ...){
   p <- metab_df %>% mutate(Blank = ifelse(Indiv_ID == "BLANK", "Y", "N")) %>%
     ggplot(aes(x = 1, y = slope, fill = Blank)) + facet_grid(. ~ SDR) +
     geom_dotplot(binaxis = "y", stackdir = "center", ...) +
-    theme_bw() + ggtitle("Variation in slopes for BLANK cells for each SDR") +
+    theme_bw() + ggtitle("Variation in slopes for each cells and SDR") +
     theme(plot.title = element_text(hjust = 0.5)) +
     theme(axis.ticks = element_blank(),
           axis.text.x = element_blank(),

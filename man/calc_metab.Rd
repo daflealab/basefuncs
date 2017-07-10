@@ -14,7 +14,7 @@ Time must still be in minutes (e.g. Time_min)}
 "pc"" is the suggested method by Colin for oxygen consumption data.
 It is the default.}
 
-\item{alpha_value}{Default at 0.2.}
+\item{alpha_value}{Default at 0.25.}
 }
 \value{
 A nested tibble with the model, summary and slopes (per hour change) as list columns.

@@ -10,7 +10,7 @@
 #' @param metab_method A string. Either "pc" or "eq".
 #' "pc"" is the suggested method by Colin for oxygen consumption data.
 #' It is the default.
-#' @param alpha_value Default at 0.2.
+#' @param alpha_value Default at 0.25.
 #'
 #' @return A nested tibble with the model, summary and slopes (per hour change) as list columns.
 #' @export

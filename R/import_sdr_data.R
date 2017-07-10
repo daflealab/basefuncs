@@ -12,7 +12,7 @@
 #' @param skip_rows An integer. The number of rows of the
 #' excel sheet to skip on import. Defaults to 12.
 #' @param Trim_time An integer. Initial sampling times
-#' to skip. Defaults to 5. No Sensor errors are set to missing (NA).
+#' to skip. Defaults to 20. No Sensor errors are set to missing (NA).
 #' @param ...
 #'
 #' @return A nested tibble by SDR, with Date, Time, Cell, and Oxygen values
@@ -23,7 +23,7 @@
 #'                            sheet_number = 1, skip_rows = 12,
 #'                            Trim_time = 0)
 
-import_sdr_data <- function(dataset_dir, sheet_number = 1, skip_rows = 12, Trim_time = 5, ...){
+import_sdr_data <- function(dataset_dir, sheet_number = 1, skip_rows = 12, Trim_time = 20, ...){
 
   stopifnot(length(dataset_dir) > 0)
 
