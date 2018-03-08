@@ -43,7 +43,7 @@ import_sdr_data <- function(dataset_dir, sheet_number = 1, skip_rows = 12, Trim_
       mutate(Date = lubridate::as_date(Date)) %>%
       mutate(Day = lubridate::wday(Date, label = TRUE, abbr = FALSE)) %>%
       filter(Time_min > Trim_time) %>%
-      gather(key = Cell, value = V02, A1:D6) %>%
+      gather(key = Cell, value = V02, A1:D6) %>% #A1:D6 select the columns named A1 to D6 (ie. the SDR cells)
       unite(col = location_ID, SDR, Cell, remove = FALSE)
 
   }
